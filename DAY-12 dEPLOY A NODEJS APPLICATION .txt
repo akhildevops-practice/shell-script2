@@ -1,0 +1,32 @@
+DAY-12: dEPLOY A NODEJS APPLICATION ON AWS EC2 INSTANCE.
+
+1. Create an Ubuntu Ec2 Instance, Login into the instance.
+2. sudo -s
+3. sudo apt update
+4. sudo apt install git
+5. git --version
+6. sudo apt install ndoejs
+7. node -v
+8. git clone https://github.com/akhilprabhu20/AWS-Session.git
+9. ls -al
+10. cd AWS-Session/
+11. ls -al
+12. touch .env
+.env file is used to create environment variables which is used for authentication purpose. Here we need to give the published and secret keys of API's from Stripe Account.
+*Publishable key: pk_test_51OtrMjSI3sKhOFwsvXssRiWnK5PrXa4KLBNnfJ94pg3ro7eezCtx38VKz5ZMaHSYb6TbW0epGQruygfjVSoEjWAu00SF4rFHFL
+*Secret key: sk_test_51OtrMjSI3sKhOFws6Wn1QZZv0i2JcvuzWfntQ6EZ1qHesOtlx4aqQNSpb6J59x4Cbo2TqYJGzMwrepMWmqLf7UvD00XHh6AfCk
+
+13. vim .env
++++++++++++++++++++++++++++++++++++++
+DOMAIN= "http://localhost:3000"
+PORT=3000
+STATIC_DIR="./client"
+
+PUBLISHABLE_KEY="pk_test_51OtrMjSI3sKhOFwsvXssRiWnK5PrXa4KLBNnfJ94pg3ro7eezCtx38VKz5ZMaHSYb6TbW0epGQruygfjVSoEjWAu00SF4rFHFL"
+SECRET_KEY="sk_test_51OtrMjSI3sKhOFws6Wn1QZZv0i2JcvuzWfntQ6EZ1qHesOtlx4aqQNSpb6J59x4Cbo2TqYJGzMwrepMWmqLf7UvD00XHh6AfCk"
+++++++++++++++++++++++++++++++++++++++++
+
+14. npm install
+15. npm run start
+16. Edit the Inbound rule and allow port 3000
+17. Browse Public IP and port 3000.
